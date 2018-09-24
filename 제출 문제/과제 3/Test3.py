@@ -24,6 +24,7 @@ def CountOfWord( line ):
 ##############################################
 filenames = [ 'fire.txt', 'wheel.txt', 'lever.txt', 'agriculture.txt', 'earthware.txt'  ]
 
+fw = open( "civilization.txt", 'w' )
 for filename in filenames:
     coc = 0;
     cow = 0;
@@ -37,8 +38,13 @@ for filename in filenames:
         cow = CountOfWord(line) + cow;
     f.close()
 
+    print( lines )
+    fw.writelines( lines );
+
     meanw = coc / cow;
 
     print( '- total characters: ' , coc )
     print( '- total words: ', cow )
     print( '- average characters per words: ', '%.3f' % meanw )
+
+fw.close();
